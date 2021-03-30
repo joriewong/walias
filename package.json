@@ -4,7 +4,7 @@
   "description": "alias",
   "main": "index.js",
   "scripts": {
-    "test": "\"\""
+    "build": "rollup --config"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/joriewong/walias/issues"
   },
-  "homepage": "https://github.com/joriewong/walias#readme"
+  "homepage": "https://github.com/joriewong/walias#readme",
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "rollup": "^2.44.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
 }
