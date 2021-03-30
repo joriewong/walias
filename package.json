@@ -1,0 +1,22 @@
+{
+  "name": "walias",
+  "version": "0.0.1",
+  "description": "alias",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joriewong/walias.git"
+  },
+  "keywords": [
+    "alias"
+  ],
+  "author": "jared",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joriewong/walias/issues"
+  },
+  "homepage": "https://github.com/joriewong/walias#readme"
+}
