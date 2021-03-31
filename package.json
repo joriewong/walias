@@ -1,10 +1,10 @@
 {
   "name": "walias",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "alias",
   "main": "main.js",
   "bin": {
-    "walias": "./bin/main.js"
+    "walias": "bin/main.js"
   },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
