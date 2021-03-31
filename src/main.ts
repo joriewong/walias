@@ -15,7 +15,7 @@ program
     alias: "your command's alias",
   })
   .action((cmd: string, alias: string) => {
-    const aliasStr = `alias ${alias}="${cmd}"`
+    const aliasStr = `alias ${alias}="${cmd}"\n`
     try {
       fs.appendFile(zshrcPath, aliasStr, 'utf8', (err: any) => {
         if (err) {

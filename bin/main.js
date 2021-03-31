@@ -20,7 +20,7 @@
         alias: "your command's alias",
     })
         .action(function (cmd, alias) {
-        var aliasStr = "alias " + alias + "=\"" + cmd + "\"";
+        var aliasStr = "alias " + alias + "=\"" + cmd + "\"\n";
         try {
             fs.appendFile(zshrcPath, aliasStr, 'utf8', function (err) {
                 if (err) {
