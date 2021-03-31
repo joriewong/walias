@@ -2,9 +2,14 @@
   "name": "walias",
   "version": "0.0.1",
   "description": "alias",
-  "main": "index.js",
+  "main": "main.js",
+  "bin": {
+    "walias": "./bin/main.js"
+  },
   "scripts": {
-    "build": "rollup --config"
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node ./bin/main.js"
   },
   "repository": {
     "type": "git",
@@ -14,14 +19,21 @@
     "alias"
   ],
   "author": "jared",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/joriewong/walias/issues"
   },
   "homepage": "https://github.com/joriewong/walias#readme",
   "devDependencies": {
-    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-typescript": "^8.2.1",
     "rollup": "^2.44.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "commander": "^2.20.3",
+    "shelljs": "^0.8.4"
   }
 }

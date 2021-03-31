@@ -1,19 +1,19 @@
-import json from '@rollup/plugin-json';
-import { terser } from 'rollup-plugin-terser';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
-  input: 'src/main.js',
+  input: './src/main.ts',
   output: [
     {
-      file: 'bin/bundle.js',
-      format: 'es'
-    },
-    {
-      file: 'bin/bundle.min.js',
-      format: 'iife',
-      name: 'version',
-      plugins: [terser()]
+      file: './bin/main.js',
+      format: 'umd',
+      banner: '#!/usr/bin/env node',
     }
   ],
-  plugins: [json()]
+  plugins: [
+    resolve(),
+    commonjs(),
+    typescript()
+  ]
 };
