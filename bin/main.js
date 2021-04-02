@@ -1250,16 +1250,18 @@ function exists(file) {
 });
 
 var name = "walias";
-var version = "0.0.2";
+var version = "0.1.1";
 var description = "alias";
 var main = "main.js";
 var bin = {
 	walias: "bin/main.js"
 };
 var scripts = {
-	build: "NODE_ENV=production rollup -c",
 	dev: "rollup -c -w",
-	test: "node ./bin/main.js"
+	test: "node ./bin/main.js",
+	build: "NODE_ENV=production rollup -c",
+	patch: "npm version patch",
+	pub: "npm run patch && npm run build && npm publish"
 };
 var repository = {
 	type: "git",
