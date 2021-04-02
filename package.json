@@ -1,6 +1,6 @@
 {
   "name": "walias",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "alias",
   "main": "main.js",
   "bin": {
