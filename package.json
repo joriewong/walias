@@ -7,9 +7,11 @@
     "walias": "bin/main.js"
   },
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
     "dev": "rollup -c -w",
-    "test": "node ./bin/main.js"
+    "test": "node ./bin/main.js",
+    "build": "NODE_ENV=production rollup -c",
+    "patch": "npm version patch",
+    "pub": "npm run patch && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
