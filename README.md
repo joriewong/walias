@@ -1,6 +1,6 @@
 # walias
 
-A tool for appending alias to `.zshrc`.
+A tool for appending alias to `.zshrc` and `.bashrc` files.
 
 ## Installation
 
@@ -12,13 +12,13 @@ npm install walias -g
 
 ```bash
 # command and alias are required arguments
-walias <command> <alias>
+walias <alias> <command>
 ```
 
 ## Example
 
 ```bash
-walias 'git status' gst
+walias gst 'git status'
 # execute 'gst' will show git status information
 gst
 ```
