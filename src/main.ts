@@ -6,10 +6,10 @@ const program = new Command()
 
 program
   .version(pkg.version)
-  .arguments('<cmd> <alias>')
+  .arguments('<alias> <cmd>')
   .description('append an alias', {
-    cmd: 'your command',
     alias: "your command's alias",
+    cmd: 'your command',
   })
   .action(append)
 

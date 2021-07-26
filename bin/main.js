@@ -1250,7 +1250,7 @@ function exists(file) {
 });
 
 var name = "walias";
-var version = "0.1.1";
+var version = "0.1.2";
 var description = "alias";
 var main = "main.js";
 var bin = {
@@ -1260,8 +1260,7 @@ var scripts = {
 	dev: "rollup -c -w",
 	test: "node ./bin/main.js",
 	build: "NODE_ENV=production rollup -c",
-	patch: "npm version patch",
-	pub: "npm run patch && npm run build && npm publish"
+	patch: "npm version patch && npm run build"
 };
 var repository = {
 	type: "git",
@@ -1306,15 +1305,23 @@ var pkg = {
 };
 
 var homedir = os__default['default'].homedir();
-var zshrc = path__default['default'].join(homedir, '.zshrc');
-var bashrc = path__default['default'].join(homedir, '.bashrc');
-var rc = { zshrcPath: zshrc, bashrcPath: bashrc };
+var zshrcPath = path__default['default'].join(homedir, ".zshrc");
+var bashrcPath = path__default['default'].join(homedir, ".bashrc");
 
-var zshrcPath = rc.zshrcPath;
-function append(cmd, alias) {
+function append(alias, cmd) {
     var aliasStr = "alias " + alias + "=\"" + cmd + "\"\n";
     try {
-        fs__default['default'].appendFile(zshrcPath, aliasStr, 'utf8', function (err) {
+        fs__default['default'].appendFile(zshrcPath, aliasStr, "utf8", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+    try {
+        fs__default['default'].appendFile(bashrcPath, aliasStr, "utf8", function (err) {
             if (err) {
                 console.log(err);
             }
@@ -1328,10 +1335,10 @@ function append(cmd, alias) {
 var program = new commander.Command();
 program
     .version(pkg.version)
-    .arguments('<cmd> <alias>')
+    .arguments('<alias> <cmd>')
     .description('append an alias', {
-    cmd: 'your command',
     alias: "your command's alias",
+    cmd: 'your command',
 })
     .action(append);
 program.parse(process.argv);
